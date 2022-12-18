@@ -1,5 +1,6 @@
 import { Client, GatewayIntentBits, REST, Routes } from 'discord.js';
 import { commands } from './commands';
+import { events } from './events';
 import { env } from './config';
 
 const { CLIENT_ID, DISCORD_TOKEN } = env;
@@ -7,16 +8,14 @@ const { CLIENT_ID, DISCORD_TOKEN } = env;
 const client = new Client({ intents: [GatewayIntentBits.Guilds] });
 const rest = new REST({ version: '10' }).setToken(DISCORD_TOKEN);
 
-client.on('ready', () => {
-  console.log(`Logged in as ${client.user?.tag}!`);
-});
-
-client.on('interactionCreate', async interaction => {
-  if (!interaction.isChatInputCommand()) return;
-  commands
-    .find(command => command.data.name === interaction.commandName)
-    ?.execute(interaction);
-});
+// handle discord events
+for (const event of events) {
+  if (event.once) {
+    client.once(event.name, (...args) => event.execute(...args));
+  } else {
+    client.on(event.name, (...args) => event.execute(...args));
+  }
+}
 
 async function main() {
   try {
