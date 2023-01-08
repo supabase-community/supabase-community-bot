@@ -31,5 +31,4 @@ export async function execute(interaction: CommandInteraction) {
   await thread.setName(`[resolved] - ${thread.name}`);
   await interaction.reply({ content: 'Done!' });
   await thread.setArchived(true);
-  await thread.setLocked(true, '[bot] - thread solved');
 }
