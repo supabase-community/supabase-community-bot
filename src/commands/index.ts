@@ -1,5 +1,5 @@
 import * as commandPong from './pong';
 import * as commandDone from './done';
-import * as commandHelp from './help';
+import * as commandRedirect from './redirect';
 
-export const commands = [commandPong, commandDone, commandHelp];
+export const commands = [commandPong, commandDone, commandRedirect];

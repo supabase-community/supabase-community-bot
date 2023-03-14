@@ -8,5 +8,4 @@ export const env = envsafe({
   }),
   DISCORD_TOKEN: str(),
   CLIENT_ID: str(),
-  HELP_CHANNEL_ID: str(),
 });
