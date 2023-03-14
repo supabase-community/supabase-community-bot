@@ -14,7 +14,6 @@ export const data = new SlashCommandBuilder()
     option
       .setName('user')
       .setDescription('The user you want to mention')
-      .setRequired(true)
   );
 
 export async function execute(interaction: CommandInteraction) {
