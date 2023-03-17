@@ -31,6 +31,7 @@ npm install # or pnpm install
 ```sh
 DISCORD_TOKEN="<Your Discord bot token>"
 CLIENT_ID="<Your Discord bot client ID>"
+HELP_CHANNEL_ID="<Discord help channel ID>"
 ```
 
 4. Run the bot
