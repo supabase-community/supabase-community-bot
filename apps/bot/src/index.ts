@@ -1,6 +1,6 @@
+import { env } from '@packages/config';
 import { Client, GatewayIntentBits, REST, Routes } from 'discord.js';
 import { commands } from './commands';
-import { env } from './config';
 
 const { CLIENT_ID, DISCORD_TOKEN } = env;
 

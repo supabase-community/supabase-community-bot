@@ -1,0 +1,24 @@
+{
+  "name": "@packages/config",
+  "version": "1.0.0",
+  "description": "Configuration package for apps",
+  "author": "Supabase Community",
+  "license": "MIT",
+  "private": true,
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "build": "del dist && tsc",
+    "format": "prettier --write \"**/*.ts\""
+  },
+  "dependencies": {
+    "envsafe": "^2.0.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.14",
+    "del-cli": "^5.0.0",
+    "dotenv": "^16.0.3",
+    "prettier": "^2.8.1",
+    "typescript": "^4.9.4"
+  }
+}
