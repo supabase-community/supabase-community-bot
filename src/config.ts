@@ -8,6 +8,9 @@ export const env = envsafe({
   }),
   DISCORD_TOKEN: str(),
   CLIENT_ID: str(),
+  SHOWCASE_CHANNEL_ID: str(),
+  SUPABASE_URL: str(),
+  SUPABASE_KEY: str(),
 });
 
 export const config = {
