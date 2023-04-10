@@ -1,14 +1,6 @@
 {
-  "compilerOptions": {
-    "strict": true,
-    "strictNullChecks": true,
-    "esModuleInterop": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "noUnusedLocals": true,
-    "skipLibCheck": true,
-    "sourceMap": true,
-    "moduleResolution": "node",
-    "outDir": "dist"
-  }
+  "extends": "./tsconfig.base.json",
+  "files": [],
+  "include": [],
+  "references": [{ "path": "./apps/bot" }, { "path": "./packages/config" }]
 }

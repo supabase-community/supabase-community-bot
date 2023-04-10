@@ -1,6 +1,6 @@
 import { CommandInteraction, SlashCommandBuilder } from 'discord.js';
 
-import { config } from '../config';
+import { env, messages } from '@packages/config';
 
 export const data = new SlashCommandBuilder()
   .setName('redirect')
@@ -14,10 +14,10 @@ export const data = new SlashCommandBuilder()
 export async function execute(interaction: CommandInteraction) {
   const userId = interaction.options.getUser('user')?.id;
 
-  let msg = config.redirectReplyMessage.replace(
-    '{user}',
-    userId ? `<@${userId}>` : 'there'
-  );
+  const message = messages.redirectReplyMessage({
+    id_user: userId || 'there',
+    id_channel: env.HELP_CHANNEL_ID,
+  });
 
-  await interaction.reply(msg);
+  await interaction.reply(message);
 }
