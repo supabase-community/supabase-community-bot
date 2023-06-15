@@ -12,6 +12,8 @@ export const data = new SlashCommandBuilder()
         option
           .setName('name')
           .setDescription('The name of your project')
+          .setMinLength(3)
+          .setMaxLength(25)
           .setRequired(true)
       )
       .addStringOption(option =>
