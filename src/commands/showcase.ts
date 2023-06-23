@@ -186,6 +186,7 @@ export async function execute(interaction: ChatInputCommandInteraction) {
         return;
       }
 
+      // @ts-ignore
       const { error: errorShowcaseInsert } = await client
         .from('showcases')
         .insert({
