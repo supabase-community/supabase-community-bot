@@ -1,4 +1,5 @@
 import { Client, GatewayIntentBits, REST, Routes } from 'discord.js';
+import { loadCooldowns } from './api/cooldowns';
 import { commands } from './commands';
 import { env } from './config';
 
@@ -21,6 +22,8 @@ client.on('interactionCreate', async interaction => {
 async function main() {
   try {
     console.log('Started refreshing application (/) commands.');
+
+    loadCooldowns();
 
     await rest.put(Routes.applicationCommands(CLIENT_ID), {
       body: commands.map(command => command.data),
